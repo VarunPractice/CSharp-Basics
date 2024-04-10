@@ -43,9 +43,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OOPS\AbstractClass\Document.cs" />
+    <Compile Include="OOPS\AbstractClass\IDocument.cs" />
+    <Compile Include="OOPS\AbstractClass\PDFDoc.cs" />
+    <Compile Include="OOPS\AbstractClass\WordDoc.cs" />
+    <Compile Include="OOPS\Abstraction\Document.cs" />
+    <Compile Include="OOPS\Abstraction\PdfDoc.cs" />
+    <Compile Include="OOPS\Abstraction\WordDoc.cs" />
     <Compile Include="OOPS\Encapsulation\Document.cs" />
+    <Compile Include="OOPS\Inheritance\Document.cs" />
+    <Compile Include="OOPS\Inheritance\PDFDoc.cs" />
+    <Compile Include="OOPS\Inheritance\WordDoc.cs" />
+    <Compile Include="OOPS\Interfaces\IDocument.cs" />
+    <Compile Include="OOPS\Interfaces\IEditableDoc.cs" />
+    <Compile Include="OOPS\Interfaces\IReadOnlyDoc.cs" />
+    <Compile Include="OOPS\Interfaces\pdfDoc.cs" />
+    <Compile Include="OOPS\Interfaces\WordDoc.cs" />
+    <Compile Include="OOPS\Polymorphism\CompileTimePolymorphism.cs" />
+    <Compile Include="OOPS\Polymorphism\RunTimePolymorphism.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serialization\Document.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
