@@ -15,7 +15,7 @@ namespace Basics
 {
     internal class Program
     {
-     
+
         static void Main(string[] args)
         {
 
@@ -117,6 +117,7 @@ namespace Basics
             */
 
             //BoxingUnBoxing
+            /*
             // Example of boxing
             int licenseCount = 5; // Value type
             object boxedLicenseCount = licenseCount; // Boxing: converting int to object
@@ -130,10 +131,34 @@ namespace Basics
             // Example of unboxing
             int unboxedLicenseCount = (int)mixedData[0]; // Unboxing: converting object back to int
             Console.WriteLine($"Unboxed licenseCount: {unboxedLicenseCount}");
+            */
 
 
+            //RefOut
+
+            int licenseCount = 5;
+
+            Console.WriteLine($"Original license count: {licenseCount}");
+
+            UpdateLicenseCount(ref licenseCount); // Passing by reference
+            Console.WriteLine($"Updated license count: {licenseCount}");
+
+            GetLicenseCount(out licenseCount); // No need to initialize licenseCount
+            Console.WriteLine($"License count: {licenseCount}");
+
+        }
+
+        public static void GetLicenseCount(out int count)
+        {
+            count = 20; // Directly assigning a value
+        }
+
+
+        public static void UpdateLicenseCount(ref int count)
+        {
+            count += 10; // Modifying the passed argument
         }
     }
 
-
-} 
+}
+ 
