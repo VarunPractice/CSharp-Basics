@@ -63,6 +63,7 @@
     <Compile Include="OOPS\Polymorphism\RunTimePolymorphism.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reflection\Document.cs" />
     <Compile Include="Serialization\Document.cs" />
   </ItemGroup>
   <ItemGroup>

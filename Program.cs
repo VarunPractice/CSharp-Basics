@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
@@ -75,8 +76,9 @@ namespace Basics
              document.Display();
              pdocument.Display();
             */
+
             //Serialization
-            Basics.Serialization.Document document = new Basics.Serialization.Document("Test","content");
+            /*Basics.Serialization.Document document = new Basics.Serialization.Document("Test","content");
             var formatter = new BinaryFormatter();
 
             using (var stream = new FileStream("document.bin", FileMode.Create, FileAccess.Write, FileShare.None))
@@ -93,6 +95,24 @@ namespace Basics
                 Console.WriteLine("Document deserialized successfully.");
                 Console.WriteLine($"Title: {deserializedDocument.Title}, Content: {deserializedDocument.Content}");
             }
+            */
+
+            //Reflection
+            Type documentType = typeof(Basics.Reflection.Document);
+
+            // Create an instance of the Document class
+            Basics.Reflection.Document doc = (Basics.Reflection.Document)Activator.CreateInstance(documentType, "My Reflection Document");
+
+            // Invoke the Display method on the Document instance
+            MethodInfo displayMethod = documentType.GetMethod("Display");
+            displayMethod.Invoke(doc, null);
+
+            // Get the Title property value
+            PropertyInfo titleProperty = documentType.GetProperty("Title", BindingFlags.Public | BindingFlags.Instance);
+            string title = (string)titleProperty.GetValue(doc);
+
+            Console.WriteLine($"Retrieved title through reflection: {title}");
+
         }
     }
 
