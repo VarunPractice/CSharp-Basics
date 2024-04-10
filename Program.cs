@@ -2,6 +2,7 @@
 using Basics.OOPS.Encapsulation;
 using Basics.OOPS.Inheritance;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -97,21 +98,39 @@ namespace Basics
             }
             */
 
+
             //Reflection
-            Type documentType = typeof(Basics.Reflection.Document);
+            /* Type documentType = typeof(Basics.Reflection.Document);
 
-            // Create an instance of the Document class
-            Basics.Reflection.Document doc = (Basics.Reflection.Document)Activator.CreateInstance(documentType, "My Reflection Document");
+             // Create an instance of the Document class
+             Basics.Reflection.Document doc = (Basics.Reflection.Document)Activator.CreateInstance(documentType, "My Reflection Document");
 
-            // Invoke the Display method on the Document instance
-            MethodInfo displayMethod = documentType.GetMethod("Display");
-            displayMethod.Invoke(doc, null);
+             // Invoke the Display method on the Document instance
+             MethodInfo displayMethod = documentType.GetMethod("Display");
+             displayMethod.Invoke(doc, null);
 
-            // Get the Title property value
-            PropertyInfo titleProperty = documentType.GetProperty("Title", BindingFlags.Public | BindingFlags.Instance);
-            string title = (string)titleProperty.GetValue(doc);
+             // Get the Title property value
+             PropertyInfo titleProperty = documentType.GetProperty("Title", BindingFlags.Public | BindingFlags.Instance);
+             string title = (string)titleProperty.GetValue(doc);
 
-            Console.WriteLine($"Retrieved title through reflection: {title}");
+             Console.WriteLine($"Retrieved title through reflection: {title}");
+            */
+
+            //BoxingUnBoxing
+            // Example of boxing
+            int licenseCount = 5; // Value type
+            object boxedLicenseCount = licenseCount; // Boxing: converting int to object
+            Console.WriteLine($"Boxed licenseCount: {boxedLicenseCount}");
+
+            // Storing in a non-generic collection
+            ArrayList mixedData = new ArrayList();
+            mixedData.Add(boxedLicenseCount); // Adding boxed value to the collection
+            mixedData.Add("DMS Document"); // Adding a reference type directly
+
+            // Example of unboxing
+            int unboxedLicenseCount = (int)mixedData[0]; // Unboxing: converting object back to int
+            Console.WriteLine($"Unboxed licenseCount: {unboxedLicenseCount}");
+
 
         }
     }
