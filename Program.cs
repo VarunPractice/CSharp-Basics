@@ -1,4 +1,5 @@
-﻿using Basics.OOPS.AbstractClass;
+﻿using Basics.Indexers;
+using Basics.OOPS.AbstractClass;
 using Basics.OOPS.Encapsulation;
 using Basics.OOPS.Inheritance;
 using Basics.PartialClass.BusinessLogic;
@@ -11,6 +12,7 @@ using System.Reflection;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
+using Document = Basics.Indexers.Document;
 
 namespace Basics
 {
@@ -154,6 +156,20 @@ namespace Basics
                 partial.OpenDoc();
                 partial.ConnectToSQL("connstring");
             */
+
+            //Indexers in C#
+            DocumentCollection collection = new DocumentCollection();
+            collection.AddDocument(new Document { Title = "First Document", Content = "Content of the first document." });
+            collection.AddDocument(new Document { Title = "Second Document", Content = "Content of the second document." });
+
+            // Accessing documents using the indexer
+            Document firstDoc = collection[0];
+            Console.WriteLine(firstDoc.Title);  // Output: First Document
+
+            // Updating a document using the indexer
+            collection[1] = new Document { Title = "Updated Second Document", Content = "Updated content of the second document." };
+            Console.WriteLine(collection[1].Title);  // Output: Updated Second Document
+
         }
 
         public static void GetLicenseCount(out int count)

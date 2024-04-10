@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Indexers\Document.cs" />
+    <Compile Include="Indexers\DocumentCollection.cs" />
     <Compile Include="OOPS\AbstractClass\Document.cs" />
     <Compile Include="OOPS\AbstractClass\IDocument.cs" />
     <Compile Include="OOPS\AbstractClass\PDFDoc.cs" />
