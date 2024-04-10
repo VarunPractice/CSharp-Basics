@@ -1,6 +1,7 @@
 ﻿using Basics.OOPS.AbstractClass;
 using Basics.OOPS.Encapsulation;
 using Basics.OOPS.Inheritance;
+using Basics.PartialClass.BusinessLogic;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -136,16 +137,23 @@ namespace Basics
 
             //RefOut
 
-            int licenseCount = 5;
+            /* int licenseCount = 5;
 
-            Console.WriteLine($"Original license count: {licenseCount}");
+             Console.WriteLine($"Original license count: {licenseCount}");
 
-            UpdateLicenseCount(ref licenseCount); // Passing by reference
-            Console.WriteLine($"Updated license count: {licenseCount}");
+             UpdateLicenseCount(ref licenseCount); // Passing by reference
+             Console.WriteLine($"Updated license count: {licenseCount}");
 
-            GetLicenseCount(out licenseCount); // No need to initialize licenseCount
-            Console.WriteLine($"License count: {licenseCount}");
+             GetLicenseCount(out licenseCount); // No need to initialize licenseCount
+             Console.WriteLine($"License count: {licenseCount}");
+            */
 
+
+            //PartialClasses
+            /*    PartialC partial = new PartialC();
+                partial.OpenDoc();
+                partial.ConnectToSQL("connstring");
+            */
         }
 
         public static void GetLicenseCount(out int count)
